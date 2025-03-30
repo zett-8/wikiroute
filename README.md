@@ -2,13 +2,10 @@
 
 Returns the [Six Degrees of Separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation) path between two Wikipedia articles.
 
+<br />
+
 ## Algorithm
 
-### Single-directional BFS
-
-
-
-## Algorithym
 ### Single-directional BFS
 
 ```
@@ -37,6 +34,8 @@ From Start Side: From Goal Side:
 ```
 Time complexity: O(b^3 + b^3) = O(2b^3)
 
+<br />
+
 ## Setup
 
 ### 1. Download Wikipedia dump files
@@ -48,6 +47,8 @@ make download-all DATE=20250301
 ```sh
 make generate-all
 ```
+
+<br />
 
 ## Run the application
 ```sh
