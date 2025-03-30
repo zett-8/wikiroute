@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  api:
+    build:
+      context: .
+      target: base
+      args:
+        PORT: 8888
+    command: "air"
+    mem_limit: 32g
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/go/app/base
+      - ./data:/data
+    # environment:
+    #   DB_DSN: "root:root@tcp(mysql:3306)/wikiroute"
+    # depends_on:
+    #   - mysql
+    restart: unless-stopped
+
+  # mysql:
+  #   image: mysql:latest
+  #   command: [
+  #     '--innodb_buffer_pool_size=2G',
+  #     '--innodb_log_file_size=512M',
+  #     '--innodb_flush_log_at_trx_commit=2',
+  #     '--skip-log-bin',
+  #     '--max_allowed_packet=512M'
+  #   ]
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: wikiroute
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - mysql_data:/var/lib/mysql
+  #     - ./sql:/docker-entrypoint-initdb.d/sql
+# volumes:
+#   mysql_data:

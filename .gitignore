@@ -1,0 +1,4 @@
+sql
+tmp
+mysql2sqlite
+*.dat
